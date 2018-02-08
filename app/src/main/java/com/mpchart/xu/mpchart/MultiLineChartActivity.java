@@ -1,4 +1,7 @@
 package com.mpchart.xu.mpchart;
+/**
+ * xuzhigaung
+ */
 
 import android.content.Context;
 import android.content.Intent;
