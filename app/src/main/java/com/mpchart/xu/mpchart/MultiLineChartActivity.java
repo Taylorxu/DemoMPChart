@@ -55,7 +55,7 @@ public class MultiLineChartActivity extends DemoBase implements OnChartValueSele
         binding.chart1.getXAxis().setDrawGridLines(false);
         binding.chart1.getAxisRight().setEnabled(false);
         binding.chart1.getAxisLeft().setDrawGridLines(true);
-        binding.chart1.getAxisLeft().setGridDashedLine(new DashPathEffect(new float[]{8,10,8,10},0));
+        binding.chart1.getAxisLeft().setGridDashedLine(new DashPathEffect(new float[]{8, 10, 8, 10}, 0));
 
         binding.chart1.setTouchEnabled(true);
         binding.chart1.setDragEnabled(true);
@@ -112,7 +112,7 @@ public class MultiLineChartActivity extends DemoBase implements OnChartValueSele
 
         LineData data = new LineData(dataSets);
         binding.chart1.setData(data);
-        binding.chart1.animateXY(3000,3000);
+        binding.chart1.animateXY(3000, 3000);
         binding.chart1.invalidate();
     }
 
@@ -126,5 +126,18 @@ public class MultiLineChartActivity extends DemoBase implements OnChartValueSele
 
     }
 
+    public void onClick(View view) {
+        LineDataSet line_today = (LineDataSet) binding.chart1.getData().getDataSetByIndex(0);
+        LineDataSet line_yesterday = (LineDataSet) binding.chart1.getData().getDataSetByIndex(1);
+        if (view.getId() == R.id.bt_today) {
+            if (!line_today.isVisible()) line_today.setVisible(true);
+            line_yesterday.setVisible(false);
+        } else if (view.getId() == R.id.bt_yesterday) {
+            line_today.setVisible(false);
+            if (!line_yesterday.isVisible()) line_yesterday.setVisible(true);
+        }
+        binding.chart1.invalidate();
+
+    }
 
 }
