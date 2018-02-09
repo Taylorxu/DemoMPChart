@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".CubicLineChartActivity" />
-        <activity android:name=".MultiLineChartActivity"></activity>
+        <activity android:name=".MultiLineChartActivity" />
+        <activity android:name=".PieChartActivity"></activity>
     </application>
 
 </manifest>

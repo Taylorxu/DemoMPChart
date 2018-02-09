@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
                 MultiLineChartActivity.start(this);
                 break;
             case R.id.button2:
+                PieChartActivity.start(this);
                 break;
         }
     }
