@@ -10,6 +10,7 @@ import android.graphics.Color;
 import android.graphics.DashPathEffect;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
@@ -102,6 +103,8 @@ public class MultiLineChartActivity extends DemoBase implements OnChartValueSele
 
             int color = mColors[z];
             d.setColor(color);
+            d.setHighLightColor(Color.RED);
+            d.setHighlightEnabled(true);
             d.setCircleColor(color);
             dataSets.add(d);
         }
@@ -122,4 +125,6 @@ public class MultiLineChartActivity extends DemoBase implements OnChartValueSele
     public void onNothingSelected() {
 
     }
+
+
 }
